@@ -18,10 +18,6 @@ public class BruteForceResult {
         this.result = result;
     }
 
-    // --- Getters & Setters ---
-
-    // --- Getters & Setters ---
-
     public int getShift() {
         return shift;
     }

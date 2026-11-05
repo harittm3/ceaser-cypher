@@ -2,9 +2,6 @@ package com.dsp.caesar;
 
 import jakarta.validation.constraints.NotBlank;
 
-/**
- * Request body for the brute-force endpoint. Only needs the ciphertext.
- */
 public class BruteForceRequest {
 
     @NotBlank(message = "Text must not be blank")
@@ -18,8 +15,6 @@ public class BruteForceRequest {
     public BruteForceRequest(String text) {
         this.text = text;
     }
-
-    // --- Getters & Setters ---
 
     public String getText() {
         return text;

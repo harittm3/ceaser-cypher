@@ -2,7 +2,7 @@
  * Caesar Cipher Tool — Frontend
  * Calls the Spring Boot REST API and updates the page.
  */
-(function () {
+document.addEventListener("DOMContentLoaded", () => {
     "use strict";
 
     // ---- DOM References ----
@@ -172,5 +172,5 @@
 
     // ---- Init ----
     renderAlphabet();
-})();
+});
 
