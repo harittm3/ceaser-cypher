@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Caesar Cipher Tool</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <h1>🔐 Caesar Cipher Tool</h1>
+            <p class="subtitle">Encrypt, Decrypt &amp; Crack — All in One Place</p>
+            <button id="darkModeToggle" class="icon-btn" title="Toggle dark mode">🌙</button>
+        </header>
+
+        <!-- Alphabet Visualization -->
+        <section class="alphabet-viz" id="alphabetViz">
+            <h3>Alphabet Mapping <span class="shift-badge" id="shiftBadge">Shift: 3</span></h3>
+            <div class="alpha-row">
+                <span class="alpha-label">Plain:</span>
+                <div class="alpha-letters" id="plainAlpha"></div>
+            </div>
+            <div class="alpha-row">
+                <span class="alpha-label">Cipher:</span>
+                <div class="alpha-letters cipher" id="cipherAlpha"></div>
+            </div>
+        </section>
+
+        <!-- Input Section -->
+        <section class="card">
+            <label for="inputText">Input Text</label>
+            <textarea id="inputText" rows="4" placeholder="Enter your message here…"></textarea>
+
+            <label for="shiftValue">Shift (1–25): <strong id="shiftDisplay">3</strong></label>
+            <div class="shift-controls">
+                <input type="range" id="shiftSlider" min="1" max="25" value="3" />
+                <input type="number" id="shiftNumber" min="1" max="25" value="3" />
+            </div>
+
+            <div class="button-group">
+                <button id="encryptBtn" class="btn btn-primary">🔒 Encrypt</button>
+                <button id="decryptBtn" class="btn btn-secondary">🔓 Decrypt</button>
+                <button id="bruteForceBtn" class="btn btn-accent">💥 Brute Force</button>
+            </div>
+
+            <!-- Error display -->
+            <div id="errorBox" class="error-box" hidden></div>
+        </section>
+
+        <!-- Output Section -->
+        <section class="card">
+            <label for="outputText">Output</label>
+            <textarea id="outputText" rows="4" readonly placeholder="Result will appear here…"></textarea>
+            <button id="copyBtn" class="btn btn-small">📋 Copy to Clipboard</button>
+        </section>
+
+        <!-- Brute Force Table -->
+        <section class="card" id="bruteForceSection" hidden>
+            <h3>Brute Force Results</h3>
+            <div class="table-wrap">
+                <table id="bruteForceTable">
+                    <thead>
+                        <tr><th>Shift</th><th>Result</th></tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <p>Built with Spring Boot &amp; Vanilla JS</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
